@@ -2,8 +2,10 @@ version: '3'
 services:
   users-service-database:
     image: "postgres" 
-    env_file:
-      - users-service-database.env 
+    environment:
+      - POSTGRES_USER=users-service-app
+      - POSTGRES_PASSWORD=usersservice
+      - POSTGRES_DB=users-service
     volumes:
       - users-service-database-data:/var/lib/postgresql/data/ 
     ports:
