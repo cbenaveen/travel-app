@@ -1,1 +1,12 @@
-
+version: '3'
+services:
+  users-service-database:
+    image: "postgres" 
+    env_file:
+      - users-service-database.env 
+    volumes:
+      - users-service-database-data:/var/lib/postgresql/data/ 
+    ports:
+      - 15432:5432
+volumes:
+  users-service-database-data: 
